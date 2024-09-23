@@ -50,4 +50,20 @@
 +  `sudo systemctl restart containerd`
 +  It takes hardly 2 sec to restart containerd. To check the status whether containerd is running or not run the below command:
 +  `sudo systemctl status containerd`
-+  
++  Next we have to install kubeadm, kubelet and kubectl. To install kubeadm, kubelet and kubectl run the below command in all the nodes.
++  ````
+   sudo apt-get update
+
+   sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+
+   curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+   echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+   sudo apt-get update
+
+   sudo apt-get install -y kubelet kubeadm kubectl
+
+   sudo apt-mark hold kubelet kubeadm kubectl
+   ````
+  +
