@@ -4,4 +4,6 @@
 + After creating EC2 instances, rename all EC2 instance hostname.
   `sudo vi /etc/hostname`
 + After that renaming all the EC2 instances hostname reboot all the intances.
-  `sudo init 6` 
+  `sudo init 6`
++ Once instances restart switch user to root user
+  `sudo -i` or `sudo su -`
