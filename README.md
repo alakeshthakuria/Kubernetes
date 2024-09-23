@@ -41,5 +41,5 @@
 
   sudo apt-get install containerd.io
   ````
++  I have got the above block of command to install containerd from this link https://docs.docker.com/engine/install/ubuntu/  where I have modified this command `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin` to install only containerd.
 +  
-
