@@ -41,5 +41,13 @@
 
   sudo apt-get install containerd.io
   ````
-+  I have got the above block of command to install containerd from this link https://docs.docker.com/engine/install/ubuntu/  where I have modified this command `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin` to install only containerd.
++  I have got the above block of command to install containerd from this link https://docs.docker.com/engine/install/ubuntu/  where I have modified this command `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin` to `sudo apt-get install containerd.io` to install only containerd.
++  Next we have to configure systemd cgroup driver in all the nodes. To configure systemd cgroup driver, run the below command:
++  `containerd config default > /etc/containerd/config.toml`
++  Next we have to open the config.toml file in all the nodes, to open use this command `sudo vi /etc/containerd/config.toml`
++  Once config.toml file open, look for SytemdCgroup which is set to false `SystemdCgroup = false` by default, so we need to change to it true.  `SytemdCgroup = true` in all the nodes.
++  After configuring SystemdCgroup we have to restart the containerd. To restart containerd run the below command:
++  `sudo systemctl restart containerd`
++  It takes hardly 2 sec to restart containerd. To check the status whether containerd is running or not run the below command:
++  `sudo systemctl status containerd`
 +  
