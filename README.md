@@ -17,3 +17,8 @@
   # Apply sysctl params without reboot
   sudo sysctl --system
   ````
++ Verify that `net.ipv4.ip_forward` is set to 1 with:
++ `sysctl net.ipv4.ip_forward`
++ Disable swap
++ `sudo swapoff -a`
++ Now we have to install container runtime. I am using containerd as container runtime. To install containerd visit https://github.com/containerd/containerd/blob/main/docs/getting-started.md  
