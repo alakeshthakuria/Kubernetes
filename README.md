@@ -1,4 +1,4 @@
-# Initiate k8s cluster using kubeadm with AWS EC2 instance
+# Initiate k8s cluster using kubeadm v1.31 with AWS EC2 instance
 
 + Launch EC2 instances for master nodes and worker nodes.
 + After creating EC2 instances, rename all EC2 instance hostname.
