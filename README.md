@@ -5,7 +5,7 @@
   `sudo vi /etc/hostname`
 + After that renaming all the EC2 instances hostname reboot all the intances.
   `sudo init 6`
-+ Once instances restart switch user to root user
++ Once all the instances restart switch user to root user in all the instances
   `sudo -i` or `sudo su -`
 + Enable IPv4 packet forwarding in all the nodes. To manually enable IPv4 packet forwarding, run the below command in all the nodes:
 + ````
