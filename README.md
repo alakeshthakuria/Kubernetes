@@ -19,8 +19,7 @@
   ````
 + Verify that `net.ipv4.ip_forward` is set to 1, run below command in all the nodes to verify:
 + `sysctl net.ipv4.ip_forward`
-+ Disable swap
-+ `sudo swapoff -a`
++ Next disable swap in all the nodes from this command: `sudo swapoff -a`
 + Now we have to install container runtime. I am using containerd as container runtime. To install containerd run the below command:
 + ````
   # Add Docker's official GPG key:
