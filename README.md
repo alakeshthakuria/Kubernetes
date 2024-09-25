@@ -17,7 +17,7 @@
   # Apply sysctl params without reboot
   sudo sysctl --system
   ````
-+ Verify that `net.ipv4.ip_forward` is set to 1 with:
++ Verify that `net.ipv4.ip_forward` is set to 1, run below command in all the nodes to verify:
 + `sysctl net.ipv4.ip_forward`
 + Disable swap
 + `sudo swapoff -a`
