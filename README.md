@@ -107,7 +107,7 @@
     6. Search and select for AmazonEC2FullAccess, IAMFullAccess, AdministratorAccess, AWSCloudFormationFullAccess. And then click next.
     7. Next we will get Role name under Role Details under Name, review and create. We have to provide Role name, let's say we name it eks-role. And then at the bottom right hand side of that window we have to 
        click create.
-    8. Next we have to provide the eks-role that we have created in the above step to EC2 instance. To that follow the below step:
+    8. Next we have to provide the eks-role that we have created in the above step to EC2 instance. To that follow these steps:
             1. Select the EC2 instance
             2. Click Action
             3. Click Security
