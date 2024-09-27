@@ -80,4 +80,43 @@
         --discovery-token-ca-cert-hash sha256:09894bd98f578aa2a39564ebe836abe4a9768d110c7eab445cd7bec9531ed970`. We need to run this command in all the worker nodes which need to join this control plane.
 + Next we need to install container network interface (CNI) plugin in controlplane node only. In this case we are using weave net. Below is the command. 
 + `kubectl apply -f https://reweave.azurewebsites.net/k8s/v1.31/net.yaml`
-+ From the above command `v1.31` is the kubeadm version we are using. This will be change according to the kubeadm version we will use. 
++ From the above command `v1.31` is the kubeadm version we are using. This will be change according to the kubeadm version we will use.
+
+
+
+# Initiate K8s cluster using Trunkey cloud solution (AWS).
+
++ First we have to launch EC2 instance.
++ Once the instance launched we have to switch user to root `sudo su -` or `sudo -i`
++ Next we have to check the version of ASW CLI version `aws --version` and version should 2.7.21 or later than 1.25.46. If aws CLI version is below than required then we have to install the required version from 
+  aws cli docs.
++ Once required aws cli version installed, restart the instance and switch to root user again. And then check the aws version `aws --version` again if it has installed required version or not.
++ Next we have to install kubectl in EC2 instance (go to the aws docs to install kubectl according to the machine).
++ Next we have to apply execute permission to the kubectl binary `chmod +x kubectl`
++ Next we have to move the kubectl to binary to "usr/local/bin": `mv kubectl usr/local/bin` so doing this we can execute the kubectl command from any path.
++ Next verify the kubectl version `kubectl --version`
++ Next we have to install eksctl according to the machine we are using (go to the aws docs to install eksctl accroding to the machine).
++ When we install eksctl from aws docs, the installation command of eksclt install eksctl in temp by default. So we have to move eksctl to usr/local/bin `mv eksctl usr/local/bin`.
++ Next check the eksctl version installed `eksctl --version`
++ Next we have to provide the IAM permission role to the EKS (IAM EKS role). To do this please follow the below steps:
+    1. Go to IAM service in aws console.
+    2. Select Roles.
+    3. Select Create role
+    4. Select EC2 and then click next.
+    5. Then under Permissions policies click on Search box.
+    6. Search and select for AmazonEC2FullAccess, IAMFullAccess, AdministratorAccess, AWSCloudFormationFullAccess. And then click next.
+    7. Next we will get Role name under Role Details under Name, review and create. We have to provide Role name, let's say we name it eks-role. And then at the bottom right hand side of that window we have to 
+       click create.
+    8. Next we have to provide the eks-role that we have created in the above step to EC2 instance. To that follow the below step:
+            - Select the EC2 instance
+            - Click Action
+            - Click Security
+            - Click Modify IAM role
+            - Then under Choose IAM role we can find and select the role that we have created in the above steps that is eks-role.
+            - Then click Update IAM role.
++ Next we have to create cluster. To create cluster we use below command:
+    + ````
+      eksctl create cluster --name alakesh-cluster --region ap-south-1 --node-type t2.small
+      ````
++ From the above command we have to provide these detail `--name`, `--region` and `--node-type`
++    
