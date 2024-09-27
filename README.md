@@ -119,4 +119,32 @@
       eksctl create cluster --name alakesh-cluster --region ap-south-1 --node-type t2.small
       ````
 + From the above command we have to provide these detail `--name`, `--region` and `--node-type`
-+    
++ Once cluster created we can see that two EC2 instances will create which we call node and we can check that in AWS EKS service and in Cloudformation service as well.
+
+
+
+# Kubectl Commands:
+
+
++ To check number of nodes
++  ````
+   kubectl get node
+   `````
++ To check number of deployment
++ ````
+  kubectl get deployment
+  ````
++ To create deployment.
++ ````
+  kubectl create deployment web-app --image=nginx --port=80 --replicas=2
+  ````
++ From the above command we have created web-app deployment from nginx image allowed port 80 and there will 2 replica set. 
++ To check number of replica set
++ ````
+  kubectl get rs
+  ````
++ To get number of pods
++ ````
+  kubectl get pod
+  ````
++ 
