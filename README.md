@@ -108,12 +108,12 @@
     7. Next we will get Role name under Role Details under Name, review and create. We have to provide Role name, let's say we name it eks-role. And then at the bottom right hand side of that window we have to 
        click create.
     8. Next we have to provide the eks-role that we have created in the above step to EC2 instance. To that follow the below step:
-            - Select the EC2 instance
-            - Click Action
-            - Click Security
-            - Click Modify IAM role
-            - Then under Choose IAM role we can find and select the role that we have created in the above steps that is eks-role.
-            - Then click Update IAM role.
+            + Select the EC2 instance
+            + Click Action
+            + Click Security
+            + Click Modify IAM role
+            + Then under Choose IAM role we can find and select the role that we have created in the above steps that is eks-role.
+            + Then click Update IAM role.
 + Next we have to create cluster. To create cluster we use below command:
     + ````
       eksctl create cluster --name alakesh-cluster --region ap-south-1 --node-type t2.small
