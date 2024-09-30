@@ -88,8 +88,9 @@
 
 + First we have to launch EC2 instance.
 + Once the instance launched we have to switch user to root `sudo su -` or `sudo -i`
-+ Next we have to check the version of ASW CLI version `aws --version` and version should 2.7.21 or later than 1.25.46. If aws CLI version is below than required then we have to install the required version from 
-  aws cli docs.
++ Next we have to check the version of ASW CLI version `aws --version` and version should 2.7.21 or later than 1.25.46. If aws CLI version is below than 
+  required then we have to install the required version from 
+  aws cli docs  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html.
 + Once required aws cli version installed, restart the instance and switch to root user again. And then check the aws version `aws --version` again if it has installed required version or not.
 + Next we have to install kubectl in EC2 instance (go to the aws docs to install kubectl according to the machine).
 + Next we have to apply execute permission to the kubectl binary `chmod +x kubectl`
